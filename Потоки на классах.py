@@ -10,9 +10,9 @@ class Knight(threading.Thread):
 
     def run(self):
         for i in range(1, 11):
+            self.enemies -= self.skill
             print(f"{self.name}, на нас напали!")
             print(f"{self.name}, сражается {i} день(дня)..., осталось {self.enemies} воинов.")
-            self.enemies -= self.skill
             time.sleep(1)
             if self.enemies <= 0:
                 print(f"{self.name} одержал победу спустя {i} дней!")
